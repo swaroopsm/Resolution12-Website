@@ -4998,4 +4998,11 @@ a.home_link:hover{
 	color: #08c;
 }
 
+.link_modal{
+	background: #0f0f0f;
+	color: #999;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#08c;
+	box-shadow: 0 0 40px 1px #00C2ff;
+}
 
