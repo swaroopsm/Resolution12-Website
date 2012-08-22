@@ -45,6 +45,7 @@ $(document).ready(function(){
 				},500).hide(0);
 				$("#my_id").delay(500).fadeIn();
 				$("#icons_sprite").delay(500).fadeIn(500);
+				$("#back_arrow").delay(1000).fadeIn(500);
 				$(t).parent().removeClass();
 				}
 				
@@ -91,7 +92,6 @@ $(document).ready(function(){
 						$("#icon"+i).stop().fadeTo(500,1.0);
 				}
 			});
-			
 			
 			
 			
