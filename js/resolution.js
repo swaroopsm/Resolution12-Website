@@ -45,6 +45,7 @@ $(document).ready(function(){
 				},500).hide(0);
 				$("#icons_sprite").delay(500).fadeIn('slow');
 				$("#back_arrow").delay(800).fadeIn(500);
+				
 				$(t).parent().removeClass();
 				}
 				
@@ -53,11 +54,11 @@ $(document).ready(function(){
 		
 			$("#back_arrow").live("click",function(){
 				$(this).fadeOut(500);
-				$("#icons_sprite").delay(200).fadeOut(500);
-				$("#about-head").delay(200).fadeIn(500);
-				$("#gallery-head").delay(200).fadeIn(500);
-				$("#events-head").css({'margin-top': '0px','margin-left': '92px','text-align':'center'}).delay(200).fadeIn(500);
-				$("#contact-head").delay(200).fadeIn(500);
+				$("#icons_sprite").hide();
+				$("#about-head").fadeIn(500);
+				$("#gallery-head").fadeIn(500);
+				$("#events-head").css({'margin-top': '0px','margin-left': '92px','text-align':'center'}).fadeIn(500);
+				$("#contact-head").fadeIn(500);
 			});
 			
 			$("#mainModal").on("show",function(){
@@ -102,7 +103,12 @@ $(document).ready(function(){
 			});
 			
 			
-			
+			$(".glow_link").click(function(){
+				var eve=$(this).attr('id');
+				var full_event=$(this).attr('data-event');
+				display_event(eve,full_event);
+				return false;
+			});
 			
 			function show_first(){
 			
@@ -115,7 +121,15 @@ $(document).ready(function(){
 				$("#ban_img2").delay(950).fadeTo(500,0.3);
 				$("#ban_img3").delay(1000).fadeTo(500,0.3);
 				$("#ban_img4").delay(1050).fadeTo(500,0.3);
-				
-				
 			}
+			
+			function display_event(eve,full_event){
+				$("#eventsModal").modal('show').hide().animate({
+					'margin-top': '10px'
+				},500).animate({
+					'margin-top': '-300px'
+				});
+				$("#test_img").html("<div class='"+eve+"'></div><br><center><span style='margin-top: 40px;margin-left: -80px;color: #ccc;'>"+full_event+"</span></center>").hide().fadeIn(500);
+			}
+			
 		});
