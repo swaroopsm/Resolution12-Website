@@ -117,11 +117,11 @@ techniques both in practical fields as well in academics.</p>
 					<hr style="width: 100%;border: 1px solid #08c;">
 				</div>
 				<div class="modal-body" style="margin-top: -5px;" id="events_body">
-					<form class="form-horizontal">
+					<form class="form-horizontal" id="register_form" method="POST" action="response/entries.php?option=create">
 				  <div class="control-group">
 					<label class="control-label" for="inputEmail">College Name: </label>
 					<div class="controls">
-					 <input type="text" id="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College"]'>
+					 <input type="text" id="college_name" name="college_name" placeholder="College Name" class="span3" style="margin: 0 auto;" data-provide="typeahead" data-items="4" data-source='["Christ University","Kristu Jayanthi College"]'>
 					</div>
 				  </div>
 				  <div class="control-group">
@@ -160,7 +160,7 @@ techniques both in practical fields as well in academics.</p>
 				</form>
 				</div>
 				<div class="modal-footer" style="background-color: #000;">
-					<button type="submit" class="btn btn-success">Submit &raquo;</button>
+					<button type="submit" id="register_btn" class="btn btn-success">Submit &raquo;</button>
 				</div>
 			</div>
 	  <!-- End Registration Modal-->
@@ -266,7 +266,8 @@ techniques both in practical fields as well in academics.</p>
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.min.js"></script>
-	 <script src="js/bootstrap.js"></script>
-	 <script src="js/resolution.js">	 </script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/jquery.form.js"></script>
+		<script src="js/resolution.js">	 </script>
   </body>
 </html>
