@@ -194,7 +194,7 @@ $(document).ready(function(){
 								$("#register_form")[0].reset();
 							}
 							else{
-								$("#js_messages").html('<span class="alert alert-danger span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Error...</span>').fadeIn(500);
+								$("#js_messages").html('<span class="alert alert-danger span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button><center>There was an error, make sure all details are filled</center></span>').fadeIn(500);
 							}
 						},
 						error: function(err){
