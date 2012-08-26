@@ -5051,3 +5051,9 @@ a.home_link:hover{
 	width: 20px;
 	opacity: 1.0;
 }
+
+.rules_text{
+	font-family: my_font;
+	letter-spacing: 3px;
+	color: #ccc;
+}
