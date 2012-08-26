@@ -134,6 +134,11 @@ $(document).ready(function(){
 					if(names!=='')
 						$("#attendees").html("Attendees: "+names).fadeIn(500);
 				});
+				return false;
+			});
+			
+			$("#register_form").submit(function(){
+				event.preventDefault();
 			});
 			
 			setInterval(function() {
@@ -182,7 +187,14 @@ $(document).ready(function(){
 						}
 					}).submit();
 				}
+				event.preventDefault();
+				return false;
 			});
+			
+			
+			function insert_attendees(){
+				
+			}
 			
 			function show_first(){
 			
