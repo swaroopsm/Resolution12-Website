@@ -6,9 +6,9 @@
 		$e=new entries();
 		switch($o){
 			case 'create': if($e->create($_POST['college_name'],$_POST['students']))
-										 	echo ":)";
+										 	echo json_encode(array('status' => 1));
 										 else
-										 	echo ":(";
+										 	echo json_encode(array('status' => 0));
 										 break;
 		}
 	}
