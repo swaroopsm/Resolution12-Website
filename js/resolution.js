@@ -150,14 +150,22 @@ $(document).ready(function(){
 					
 				}
 				else{
+					$("#register_form")[0].reset();
+					/*$("#js_messages").html('<center><b style="color: #fff;">Loading...</b></center>').show();
 					$("#register_form").ajaxForm({
+						dataType: 'json',
 						success: function(data){
-							console.log(data);
+							if(data.status){
+								$("#js_messages").html('<span class="alert alert-success span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Success...</span>').fadeIn(500);
+							}
+							else{
+								$("#js_messages").html('<span class="alert alert-danger span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Error...</span>').fadeIn(500);
+							}
 						},
 						error: function(err){
 							console.log(err);
 						}
-					}).submit();
+					}).submit();*/
 				}
 			});
 			
