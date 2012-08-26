@@ -211,9 +211,19 @@ $(document).ready(function(){
 			});
 			
 			
-			function insert_attendees(){
-				
-			}
+			$("#rules_link").live("click",function(){
+				$(this).hide()
+				$("#back_link").fadeIn(500);
+				$("#register_form").hide();
+				$("#general_rules").fadeIn(500);
+			});
+			
+			$("#back_link").live("click",function(){
+				$(this).hide()
+				$("#rules_link").fadeIn(500);
+				$("#register_form").fadeIn(500);
+				$("#general_rules").hide();
+			});
 			
 			function show_first(){
 			
