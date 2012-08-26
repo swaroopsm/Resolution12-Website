@@ -213,15 +213,19 @@ $(document).ready(function(){
 			
 			$("#rules_link").live("click",function(){
 				$(this).hide()
+				$("#register_heading").html('General Rules').hide().fadeIn(500);
 				$("#back_link").fadeIn(500);
 				$("#register_form").hide();
+				$("#register_btn").hide();
 				$("#general_rules").fadeIn(500);
 			});
 			
 			$("#back_link").live("click",function(){
 				$(this).hide()
+				$("#register_heading").html('Registration').hide().fadeIn(500);
 				$("#rules_link").fadeIn(500);
 				$("#register_form").fadeIn(500);
+				$("#register_btn").fadeIn(500);
 				$("#general_rules").hide();
 			});
 			
