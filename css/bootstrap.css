@@ -5035,3 +5035,9 @@ a.home_link:hover{
 	box-shadow: 0 0 80px 1px #fff;
 	background-color: 	#ccc;
 }
+
+#news_updates > span{
+	display: none;
+	position: absolute;
+	margin-left: 280px;
+}
