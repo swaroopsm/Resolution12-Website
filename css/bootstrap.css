@@ -5036,8 +5036,7 @@ a.home_link:hover{
 	background-color: 	#ccc;
 }
 
-#news_updates > span{
+#news_updates > p{
 	display: none;
-	position: absolute;
-	margin-left: 280px;
+	position: inline-block;
 }
