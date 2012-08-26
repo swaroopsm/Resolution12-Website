@@ -5,7 +5,10 @@
 		$o=$_GET['option'];
 		$e=new entries();
 		switch($o){
-			case 'create': $e->create($_POST['stu_name'],$_POST['stu_college']);
+			case 'create': if($e->create($_POST['college_name'],$_POST['students']))
+										 	echo ":)";
+										 else
+										 	echo ":(";
 										 break;
 		}
 	}
