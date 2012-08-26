@@ -125,6 +125,7 @@ $(document).ready(function(){
 			$("#college_name").live("change",function(){
 				if ($(this).attr('data-source').indexOf($(this).val()) > -1) {
 					$("#no_college").fadeOut(500);
+					$("#student_name_fields").html('').fadeOut(500)
 					$("#students_block").fadeIn(500);
 					$("#register_btn").attr("disabled",false);
 				}
@@ -132,7 +133,6 @@ $(document).ready(function(){
 					$("#no_college").fadeIn(500);
 					$("#students_block").fadeOut(500);
 					$("#register_btn").attr("disabled",true);
-					return;
 				}
 				get_attendees();
 				return false;
@@ -191,6 +191,7 @@ $(document).ready(function(){
 						success: function(data){
 							if(data.status){
 								get_attendees();
+								$("#student_name_fields").html('').fadeOut(500)
 								$("#register_form")[0].reset();
 							}
 							else{
