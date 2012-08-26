@@ -122,6 +122,11 @@ $(document).ready(function(){
 			});
 			
 			$("#college_name").live("change",function(){
+				get_attendees();
+				return false;
+			});
+			
+			function get_attendees(){
 				$.post("json/json.attendees.php",{college: $("#college_name").val()},
 				function(data){
 					$("#attendees").html('');
@@ -132,10 +137,9 @@ $(document).ready(function(){
 					}
 					names=names.substring(0,names.length-2);
 					if(names!=='')
-						$("#attendees").html("Attendees: "+names).fadeIn(500);
+						$("#attendees").html("Attendees: "+names).hide().fadeIn(500);
 				});
-				return false;
-			});
+			}
 			
 			$("#register_form").submit(function(){
 				event.preventDefault();
@@ -167,15 +171,14 @@ $(document).ready(function(){
 			$("#register_btn").live("click",function(){
 				var college_name=$("#college_name").val();
 				if(college_name==''){
-					
+					$("#college_name").focus();
 				}
 				else{
-					$("#js_messages").html('<center><b style="color: #fff;">Loading...</b></center>').show();
 					$("#register_form").ajaxForm({
 						dataType: 'json',
 						success: function(data){
 							if(data.status){
-								$("#js_messages").html('<span class="alert alert-success span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Success...</span>').fadeIn(500);
+								get_attendees();
 								$("#register_form")[0].reset();
 							}
 							else{
