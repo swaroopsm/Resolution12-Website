@@ -5047,6 +5047,7 @@ a.home_link:hover{
 	margin-top: -10px;
 }
 
-.social_icons > img{
+.single_icon{
 	width: 25px;
+	opacity: 1.0;
 }
