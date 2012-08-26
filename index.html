@@ -112,11 +112,13 @@ techniques both in practical fields as well in academics.</p>
 	  <!-- Registration Modal -->
 		<div class="modal hide fade link_modal" id="registerModal" style="">
 				<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">x</button>
 					<h3 style="font-family: my_font;font-size:20px;border: 0px;"><span id="test_img"><b>Registration</b></span></h3>
+					<a href="#" id="rules_link" style="float: right;margin-top: -20px;">General Rules</a>
+					<a href="#" id="back_link" style="float: right;margin-top: -20px;display: none;">Back</a>
 					<hr style="width: 100%;border: 1px solid #08c;">
 				</div>
 				<div class="modal-body" style="margin-top: -5px;" id="events_body">
+				<div id="general_rules" style="display: none;">sad</div>
 					<form class="form-horizontal" id="register_form" method="POST" action="response/entries.php?option=create">
 					<div class="control-group" id="js_messages">
 					<center><span id="no_college" style="display: none;"></span></center>
