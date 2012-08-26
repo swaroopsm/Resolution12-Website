@@ -88,7 +88,7 @@ $(document).ready(function(){
 				var no_stu=$(this).val();
 				$("#student_name_fields").html('');
 				for(var i=1;i<=no_stu;i++){
-					$("#student_name_fields").append("<label class='control-label' for='inputPassword'>Student "+i+": </label><div class='controls'><input type='text' name='' id='student["+i+"]' placeholder='Student Name'></div>");
+					$("#student_name_fields").append("<label class='control-label' for='inputPassword'>Student "+i+": </label><div class='controls'><input type='text' name='students[]' id='student["+i+"]' placeholder='Student Name'></div>");
 				}
 				$("#student_name_fields").fadeIn(500);
 			});
@@ -141,6 +141,23 @@ $(document).ready(function(){
 			$(".single_icon").live("mouseleave",function(){
 				for(var i=1;i<=3;i++){
 						$("#social"+i).stop().fadeTo(500,1.0);
+				}
+			});
+			
+			$("#register_btn").live("click",function(){
+				var college_name=$("#college_name").val();
+				if(college_name==''){
+					
+				}
+				else{
+					$("#register_form").ajaxForm({
+						success: function(data){
+							console.log(data);
+						},
+						error: function(err){
+							console.log(err);
+						}
+					}).submit();
 				}
 			});
 			
