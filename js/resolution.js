@@ -121,7 +121,15 @@ $(document).ready(function(){
 				return false;
 			});
 			
+			
 			$("#college_name").live("change",function(){
+				if ($(this).attr('data-source').indexOf($(this).val()) > -1) {
+					$("#register_btn").attr("disabled",false);
+				}
+				else{
+					$("#register_btn").attr("disabled",true);
+					return;
+				}
 				get_attendees();
 				return false;
 			});
