@@ -121,9 +121,8 @@ $(document).ready(function(){
 				return false;
 			});
 			
-			var news_child=$("#news_updates").children().children()
 			setInterval(function() {
-			$('#news_updates > span:first').delay(800).fadeIn(800).next().fadeOut(800).end().appendTo('#news_updates');
+			$('#news_updates > p:first').delay(800).fadeIn(800).next().fadeOut(800).end().appendTo('#news_updates');
 			},6000);
 			
 			function show_first(){
