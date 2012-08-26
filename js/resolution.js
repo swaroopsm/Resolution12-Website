@@ -121,6 +121,7 @@ $(document).ready(function(){
 				return false;
 			});
 			
+			var msg="";
 			
 			$("#college_name").live("change",function(){
 				if ($(this).attr('data-source').indexOf($(this).val()) > -1) {
@@ -128,13 +129,15 @@ $(document).ready(function(){
 					$("#student_name_fields").html('').fadeOut(500)
 					$("#students_block").fadeIn(500);
 					$("#register_btn").attr("disabled",false);
+					msg='';
 				}
 				else{
-					$("#no_college").fadeIn(500);
+					msg='Your college not in the list? <a href="mailto:resolution.cmrit@gmail.com" target="_BLANK">Mail Us!</a>';
 					$("#students_block").fadeOut(500);
 					$("#register_btn").attr("disabled",true);
 				}
 				get_attendees();
+				$("#no_college").html(msg).fadeIn(500);
 				return false;
 			});
 			
