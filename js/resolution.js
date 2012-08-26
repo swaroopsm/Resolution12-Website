@@ -125,6 +125,25 @@ $(document).ready(function(){
 			$('#news_updates > p:first').delay(800).fadeIn(800).next().fadeOut(800).end().appendTo('#news_updates');
 			},6000);
 			
+			$(".single_icon").live("mouseenter",function(){
+				var id=$(this).attr('id');
+				console.log(id);
+				for(var i=1;i<=3;i++){
+					if(id=='social'+i){
+						$("#social"+id).stop().fadeTo(500,1.0);
+					}
+					else{
+						$("#social"+i).stop().fadeTo(500,0.3);
+					}
+				}
+			});
+			
+			$(".single_icon").live("mouseleave",function(){
+				for(var i=1;i<=3;i++){
+						$("#social"+i).stop().fadeTo(500,1.0);
+				}
+			});
+			
 			function show_first(){
 			
 				$("#ban_img1").delay(200).fadeTo(500,1.0);
