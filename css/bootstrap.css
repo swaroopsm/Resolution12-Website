@@ -5040,3 +5040,13 @@ a.home_link:hover{
 	display: none;
 	position: inline-block;
 }
+
+.social_icons{
+	position: absolute;
+	margin-left: 900px;
+	margin-top: -10px;
+}
+
+.social_icons > img{
+	width: 25px;
+}
