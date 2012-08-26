@@ -121,6 +121,21 @@ $(document).ready(function(){
 				return false;
 			});
 			
+			$("#college_name").live("change",function(){
+				$.post("json/json.attendees.php",{college: $("#college_name").val()},
+				function(data){
+					$("#attendees").html('');
+					var obj=jQuery.parseJSON(data);
+					var names="";
+					for(var i=0;i<obj.length;i++){
+						names=names+obj[i].name+", ";
+					}
+					names=names.substring(0,names.length-2);
+					if(names!=='')
+						$("#attendees").html("Attendees: "+names).fadeIn(500);
+				});
+			});
+			
 			setInterval(function() {
 			$('#news_updates > p:first').delay(800).fadeIn(800).next().fadeOut(800).end().appendTo('#news_updates');
 			},6000);
@@ -150,13 +165,13 @@ $(document).ready(function(){
 					
 				}
 				else{
-					$("#register_form")[0].reset();
-					/*$("#js_messages").html('<center><b style="color: #fff;">Loading...</b></center>').show();
+					$("#js_messages").html('<center><b style="color: #fff;">Loading...</b></center>').show();
 					$("#register_form").ajaxForm({
 						dataType: 'json',
 						success: function(data){
 							if(data.status){
 								$("#js_messages").html('<span class="alert alert-success span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Success...</span>').fadeIn(500);
+								$("#register_form")[0].reset();
 							}
 							else{
 								$("#js_messages").html('<span class="alert alert-danger span6" style="margin-top: -10px;"><button type="button" class="close" data-dismiss="alert">&times;</button>Error...</span>').fadeIn(500);
@@ -165,7 +180,7 @@ $(document).ready(function(){
 						error: function(err){
 							console.log(err);
 						}
-					}).submit();*/
+					}).submit();
 				}
 			});
 			
